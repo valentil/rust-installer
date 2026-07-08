@@ -6,9 +6,29 @@ A **bespoke, dependency-free software installer written in pure Rust** — stand
 
 > One of the example projects built with [FeatureBoard](https://featureboard.ai).
 
-## Status: early scaffold
+## Status: working
 
-Honest note: the original project folder was an empty stub. This is a **clean, compiling starting point** — a working CLI skeleton with a unit test — not a finished installer. It's included in the showcase as a work-in-progress that demonstrates the intended std-only architecture.
+The original project folder was an empty stub; this is now a **functional, dependency-free installer** built entirely on `std`. It recursively stages a payload directory into a destination, records a manifest of everything it wrote, and can **verify** and **uninstall** from that manifest — with **rollback** if an install fails partway through. Ships with a sample `payload/` and a test suite.
+
+### Commands
+
+```bash
+rust-installer install <SRC> <DEST>   # copy payload SRC into DEST, write a manifest
+rust-installer verify   <DEST>        # check every manifested file is present
+rust-installer uninstall <DEST>       # remove everything the manifest installed
+rust-installer --version
+```
+
+### Try it (uses the bundled sample payload)
+
+```bash
+cargo run -- install ./payload ./demo-install   # stages README.txt, bin/, config/
+cargo run -- verify ./demo-install              # all files present
+cargo run -- uninstall ./demo-install           # cleanly removes them
+cargo test                                       # install/verify/uninstall + rollback tests
+```
+
+`run.sh` / `run.bat` do the build → install → verify demo in one go.
 
 ## Build & run
 

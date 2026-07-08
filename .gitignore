@@ -1,5 +1,6 @@
 /target
 **/*.rs.bk
 Cargo.lock
+/demo-install
 *.log
 .DS_Store
