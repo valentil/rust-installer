@@ -1,8 +1,10 @@
 # Rust Installer
 
+[![Made with FeatureBoard](https://img.shields.io/badge/Made_with-FeatureBoard-00c8ff?style=flat-square)](https://featureboard.ai) [![License: MIT](https://img.shields.io/badge/License-MIT-3fb950?style=flat-square)](./LICENSE)
+
 A **bespoke, dependency-free software installer written in pure Rust** — standard library only, no crates. The goal is to implement everything an installer needs (argument parsing, filesystem staging, a manifest, progress, and eventually rollback) from scratch, as a study in doing it without pulling in the ecosystem.
 
-> One of the example projects built with [FeatureBoard](https://featureboard.dev).
+> One of the example projects built with [FeatureBoard](https://featureboard.ai).
 
 ## Status: early scaffold
 
@@ -24,3 +26,10 @@ cargo test                     # runs the manifest test
 ## License
 
 MIT © Lewis Valentine
+
+## The AI-native approach
+
+Built the FeatureBoard way — see [How We Build](https://featureboard.ai/approach.html):
+
+- **Planning & metadata as substrate** — scaffolded from an explicit std-only architecture brief.
+- **Validation over review** — ships with a unit test proving the manifest is written.
