@@ -1,0 +1,13 @@
+[package]
+name = "rust-installer"
+version = "0.1.0"
+edition = "2021"
+description = "A bespoke, dependency-free software installer written in pure Rust (std only)."
+license = "MIT"
+
+# Intentionally no dependencies: the goal is a from-scratch installer using only the standard library.
+[dependencies]
+
+[[bin]]
+name = "rust-installer"
+path = "src/main.rs"
